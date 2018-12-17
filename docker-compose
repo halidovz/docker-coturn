@@ -1,12 +1,10 @@
+
 version: '3'
 services:
   turn:
     env_file: .env
     build: ./
     network_mode: "host"
-    ports:
-      - "${TURN_PORT}:${TURN_PORT}/udp"
-      - "${TURN_PORT}:${TURN_PORT}/tcp"
     logging:
       driver: "json-file"
       options:
